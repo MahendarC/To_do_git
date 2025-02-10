@@ -1,0 +1,131 @@
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2
+$ git clone https://github.com/MahendarC/Fday.git
+Cloning into 'Fday'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+ (from 0)
+Receiving objects: 100% (3/3), done.
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2
+$ cd Fday
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$ git switch -c branch_one
+Switched to a new branch 'branch_one'
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ touch demo1.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git add .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git commit -m "1st"
+[branch_one 62b9268] 1st
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo1.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git status
+On branch branch_one
+nothing to commit, working tree clean
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git push  origin
+fatal: The current branch branch_one has no upstream branch.
+To push the current branch and set the remote as upstream, u
+se
+
+    git push --set-upstream origin branch_one
+
+To have this happen automatically for branches without a tra
+cking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git push origin HEAD:branch_one
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 271 bytes | 135.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0
+)
+remote:
+remote: Create a pull request for 'branch_one' on GitHub by
+visiting:
+remote:      https://github.com/MahendarC/Fday/pull/new/bran
+ch_one
+remote:
+To https://github.com/MahendarC/Fday.git
+ * [new branch]      HEAD -> branch_one
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git switch master
+fatal: invalid reference: master
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git branch --list
+* branch_one
+  main
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git switch main
+M       README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$ git add .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$ git commit -m "2nd"
+[main 74b215e] 2nd
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$ git switch branch_one
+Switched to branch 'branch_one'
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git add .
+it
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git commit -m "3rd"
+
+[branch_one 42133c4] 3rd
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (branch_one)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$ git merge branch_one
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the re
+sult.
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main|MERGING)
+$ git add .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main|MERGING)
+$ git commit -m "resolved conflict"
+[main 9bfe590] resolved conflict
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Friday2/Fday (main)
+$
+
+
+
+
+

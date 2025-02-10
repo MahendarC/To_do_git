@@ -1,0 +1,126 @@
+How to merge on git bash
+
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ touch demo1.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git add  .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git commit -m "first commit"
+[master (root-commit) 7286bbe] first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo1.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ touch demo2.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git add  .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git commit -m "second commit"
+[master 5a3c382] second commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo2.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git reflog
+5a3c382 (HEAD -> master) HEAD@{0}: commit: second
+commit
+7286bbe HEAD@{1}: commit (initial): first commit
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git switch -c branch
+Switched to a new branch 'branch'
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ touch demo3.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git add  .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git commit -m "3rd commit"
+[branch 79261f0] 3rd commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo3.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git switch master
+Switched to branch 'master'
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ touch demo4.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git add  .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git commit -m "4th commit"
+[master d9ade19] 4th commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo4.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git switch branch
+Switched to branch 'branch'
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git log --all --oneline --decorate --graph
+* d9ade19 (master) 4th commit
+| * 79261f0 (HEAD -> branch) 3rd commit
+|/
+* 5a3c382 second commit
+* 7286bbe first commit
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ touch demo5.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git add .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git commit -m "5th commit"
+[branch df8e810] 5th commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo5.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ touch demo6.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git add .
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (branch)
+$ git commit -m "6th commit"
+[branch 95f4959] 6th commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo6.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (br
+
+Merge made by the 'ort' strategy.
+ demo3.txt | 0
+ demo5.txt | 0
+ demo6.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demo3.txt
+ create mode 100644 demo5.txt
+ create mode 100644 demo6.txt
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$ git log --all --oneline --decorate --graph
+*   662f912 (HEAD -> master) Merge branch 'branch'
+|\
+| * 95f4959 (branch) 6th commit
+| * df8e810 5th commit
+| * 79261f0 3rd commit
+* | d9ade19 4th commit
+|/
+* 5a3c382 second commit
+* 7286bbe first commit
+
+WIN10@DESKTOP-C1PK23Q MINGW64 ~/Desktop/Thursday (master)
+$
